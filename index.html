@@ -1,83 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreenVolt Energy | Battery Pack Solutions</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithon Energy - EV & Solar Battery Solutions</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles and font setting */
+        :root {
+            --color-primary: #059669; /* Emerald 600 */
+            --color-secondary: #1E40AF; /* Blue 800 */
+            --color-light: #F3F4F6; /* Gray 100 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-light);
+            color: #1F2937; /* Gray 800 */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Style for the Call-to-Action button */
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px -5px var(--color-primary);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -5px var(--color-primary);
+        }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">🔋 GreenVolt Energy</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Brand Name -->
+                <a href="#" class="flex items-center space-x-2">
+                    <!-- Simple SVG Battery Icon -->
+                    <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14h-2V7h2v9z"/>
+                    </svg>
+                    <span class="text-2xl font-extrabold text-gray-900">Lithon<span class="text-green-600">Energy.</span></span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#solutions" class="text-gray-600 hover:text-green-600 transition duration-150">Solutions</a>
+                    <a href="#quality" class="text-gray-600 hover:text-green-600 transition duration-150">Our Edge</a>
+                    <a href="#process" class="text-gray-600 hover:text-green-600 transition duration-150">Process</a>
+                    <a href="#contact" class="px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-150">Contact Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden p-2 text-gray-700 hover:text-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#solutions" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Solutions</a>
+                <a href="#quality" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Our Edge</a>
+                <a href="#process" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Process</a>
+                <a href="#contact" class="mt-2 w-11/12 text-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-150">Contact Us</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Powering a Greener Tomorrow</h1>
-            <p>High-performance battery packs for EVs, solar systems, and energy storage solutions.</p>
-            <button onclick="scrollToSection('contact')">Get in Touch</button>
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="relative pt-24 pb-32 overflow-hidden bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:justify-between">
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2">
+                        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
+                            <span class="block">Powering the</span>
+                            <span class="block text-gradient">Sustainable Future.</span>
+                        </h1>
+                        <p class="mt-6 text-xl text-gray-600 max-w-lg">
+                            We assemble high-performance, reliable lithium battery packs tailored for electric mobility, solar energy storage, and custom industrial applications.
+                        </p>
+                        <div class="mt-10 flex space-x-4">
+                            <a href="#solutions" class="cta-button inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-green-600 hover:bg-green-700">
+                                Explore Our Solutions
+                            </a>
+                            <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-green-600 text-base font-medium rounded-xl text-green-600 bg-white hover:bg-green-50">
+                                Get a Quote
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image/Visual Placeholder -->
+                    <div class="mt-12 lg:mt-0 lg:w-5/12">
+                        <img class="w-full rounded-2xl shadow-2xl transform hover:scale-[1.01] transition duration-500 ease-in-out" 
+                            src="https://placehold.co/600x400/059669/ffffff?text=High-Capacity+Battery+Pack" 
+                            alt="High-Capacity Battery Pack Assembly"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/059669/ffffff?text=Battery+Solutions+Visual';"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Solutions Section -->
+        <section id="solutions" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">Our Energy Solutions</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        Reliable power for every application, built with precision and safety in mind.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Solution 1: EV Rickshaw Battery Packs -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
+                        <div class="flex items-center space-x-4">
+                            <!-- EV Icon (Inline SVG) -->
+                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-3a2 2 0 01-2-2v-2h-2v2a2 2 0 01-2 2H7M5 10v7h14v-7M5 10a4 4 0 01-4-4v-1h16v1a4 4 0 01-4 4H5zM20 10v7M10 2a2 2 0 00-2 2v2M16 2a2 2 0 012 2v2"></path>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-gray-900">EV Mobility Packs</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            High-density battery packs specifically designed for EV Rickshaws and light commercial vehicles. Featuring long cycle life, fast charging capabilities, and rugged safety features for daily use.
+                        </p>
+                    </div>
+
+                    <!-- Solution 2: Solar Inverter Battery Packs -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
+                        <div class="flex items-center space-x-4">
+                            <!-- Solar Icon (Inline SVG) -->
+                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-gray-900">Solar Energy Storage</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Deep-cycle battery solutions optimized for solar power storage and home/commercial inverter systems. Ensures maximum energy utilization and backup reliability during grid outages.
+                        </p>
+                    </div>
+
+                    <!-- Solution 3: Custom Industrial Packs -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
+                        <div class="flex items-center space-x-4">
+                            <!-- Custom Icon (Inline SVG) -->
+                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <h3 class="text-2xl font-bold text-gray-900">Bespoke Power Solutions</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Specializing in **custom battery packs** using popular cell types like **18650, 21700, and other high-grade cells**. We design packs tailored to your specific voltage, capacity, and form factor needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Our Edge (Quality and Innovation) -->
+        <section id="quality" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                    <!-- Image/Visual Placeholder -->
+                    <div class="order-2 lg:order-1">
+                        <img class="w-full h-auto rounded-2xl shadow-2xl" 
+                             src="https://placehold.co/600x400/1E40AF/ffffff?text=Quality+Control+Station" 
+                             alt="Battery Testing and Quality Control"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E40AF/ffffff?text=Quality+Control+Visual';"
+                        >
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="mt-12 lg:mt-0 order-1 lg:order-2">
+                        <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">The Lithon Energy Difference</span>
+                        <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Uncompromising Quality & Innovation</h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            We use only the highest-grade cells, including **18650 and 21700** formats, and advanced Battery Management Systems (BMS) to ensure every pack delivers superior performance, maximum safety, and an extended lifespan.
+                        </p>
+                        
+                        <div class="mt-8 space-y-6">
+                            <div class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.364A9 9 0 0121 12c0 2.21-1.002 4.207-2.585 5.485L17 21l-3.328-1.55a9.001 9.001 0 01-1.672.483c-2.484 0-4.755-.83-6.6-2.224"></path>
+                                </svg>
+                                <p class="ml-4 text-gray-700">
+                                    <span class="font-semibold text-gray-900">Advanced BMS:</span> Integrated smart management for optimal cell balancing and protection against overcharge/discharge.
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <p class="ml-4 text-gray-700">
+                                    <span class="font-semibold text-gray-900">Superior Efficiency:</span> Minimal energy loss, maximizing the range for EVs and backup time for inverters.
+                                </p>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m0 0l8-4m-4 8h.01M4 15h.01M20 15h.01M4 19h.01M20 19h.01M12 18V9"></path>
+                                </svg>
+                                <p class="ml-4 text-gray-700">
+                                    <span class="font-semibold text-gray-900">Robust Assembly:</span> Industrial-grade assembly techniques ensure durability and performance in demanding environments.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Assembly Process Section -->
+        <section id="process" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">Our Methodology</span>
+                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">The Precision Assembly Process</h2>
+                </div>
+
+                <div class="relative">
+                    <!-- Line connector for large screens -->
+                    <div class="hidden lg:block absolute inset-0 w-full h-1/2 mt-16 border-t-2 border-dashed border-green-300"></div>
+
+                    <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-4 lg:gap-x-8">
+                        <!-- Step 1 -->
+                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">1</div>
+                            <h3 class="text-xl font-bold text-gray-900">Cell Selection & Testing</h3>
+                            <p class="mt-2 text-gray-600">Sourcing premium cells (18650, 21700, etc.) followed by rigorous capacity and internal resistance testing.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">2</div>
+                            <h3 class="text-xl font-bold text-gray-900">BMS Integration</h3>
+                            <p class="mt-2 text-gray-600">Precision soldering and wiring of the Battery Management System for smart performance control.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">3</div>
+                            <h3 class="text-xl font-bold text-gray-900">Housing & Encapsulation</h3>
+                            <p class="mt-2 text-gray-600">Sealing the pack in a durable, vibration-resistant, and thermally managed enclosure.</p>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
+                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">4</div>
+                            <h3 class="text-xl font-bold text-gray-900">Final Validation</h3>
+                            <p class="mt-2 text-gray-600">Full charge/discharge cycle testing and quality assurance checks before dispatch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Call to Action Banner -->
+        <section class="bg-blue-800 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white">Ready to Power Your Innovation?</h2>
+                <p class="mt-4 text-xl text-blue-200">
+                    Let's discuss your custom battery pack requirements.
+                </p>
+                <a href="#contact" class="mt-8 cta-button inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-xl text-blue-800 bg-white hover:bg-gray-100 transition duration-300">
+                    Contact Our Experts Today
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer & Contact Section -->
+    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-700 pb-10">
+                <!-- Column 1: Brand Info -->
+                <div class="md:col-span-1">
+                    <span class="text-2xl font-extrabold text-white">Lithon<span class="text-green-500">Energy.</span></span>
+                    <p class="mt-4 text-gray-400 text-sm">
+                        Building the energy solutions that drive clean mobility and renewable energy adoption.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-green-500 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#solutions" class="hover:text-green-500 transition duration-150">EV Solutions</a></li>
+                        <li><a href="#solutions" class="hover:text-green-500 transition duration-150">Solar Storage</a></li>
+                        <li><a href="#quality" class="hover:text-green-500 transition duration-150">Our Technology</a></li>
+                        <li><a href="#" class="hover:text-green-500 transition duration-150">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold text-green-500 mb-4">Contact Info</h4>
+                    
+                    <!-- Dedicated WhatsApp Contact -->
+                    <p class="text-gray-400">
+                        <!-- Icon for chat/message -->
+                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14h2v-8h-2v8zM12 7.5a.5.5 0 110-1 .5.5 0 010 1z"/></svg>
+                        <a href="https://wa.me/911234567890" target="_blank" class="hover:text-green-500 transition duration-150">WhatsApp: +91 12345 67890 (Chat Now)</a>
+                    </p>
+
+                    <!-- Standard Phone Contact -->
+                    <p class="mt-2 text-gray-400">
+                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.75-.25 1.02l-2.2 2.2z"/></svg>
+                        Phone: (555) 987-6543
+                    </p>
+                    <p class="mt-2 text-gray-400">
+                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        sales@lithonenergy.com
+                    </p>
+                    <p class="mt-2 text-gray-400">
+                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Industrial Area, City, Pin 12345
+                    </p>
+                </div>
+
+                <!-- Column 4: Social Links (Mockup) -->
+                <div>
+                    <h4 class="text-lg font-semibold text-green-500 mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition duration-150">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition duration-150">LinkedIn</a>
+                        <!-- WhatsApp added to social list -->
+                        <a href="https://wa.me/911234567890" target="_blank" class="text-gray-400 hover:text-green-500 transition duration-150">WhatsApp</a>
+                        <a href="#" class="text-gray-400 hover:text-green-500 transition duration-150">X (Twitter)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 text-center text-sm text-gray-500">
+                &copy; <span id="current-year"></span> Lithon Energy. All rights reserved.
+            </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>
-            GreenVolt Energy is a Dehradun-based company specializing in battery pack assembly 
-            for Electric Rickshaws, Solar Inverters, and other renewable energy applications. 
-            We deliver reliable, efficient, and eco-friendly energy solutions that empower sustainable growth.
-        </p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/1034/1034115.png" alt="EV Batteries">
-                <h3>EV Battery Packs</h3>
-                <p>Custom lithium-ion battery packs designed for E-rickshaws and small EVs.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Solar Battery">
-                <h3>Solar Storage Solutions</h3>
-                <p>Reliable solar inverter battery systems to store clean and efficient energy.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/2622/2622126.png" alt="Industrial Battery">
-                <h3>Industrial Applications</h3>
-                <p>Battery assembly for backup power, robotics, and industrial automation.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p id="formStatus"></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 GreenVolt Energy | All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Get the current year for the footer copyright
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // JavaScript for mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Optional: Hide mobile menu after clicking a link
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Wait for the smooth scroll to start, then hide
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); 
+            });
+        });
+
+        // Smooth scrolling for anchor links (better user experience)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
