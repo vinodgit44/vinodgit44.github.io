@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenVolt Energy | Battery Pack Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">🔋 GreenVolt Energy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Powering a Greener Tomorrow</h1>
+            <p>High-performance battery packs for EVs, solar systems, and energy storage solutions.</p>
+            <button onclick="scrollToSection('contact')">Get in Touch</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            GreenVolt Energy is a Dehradun-based company specializing in battery pack assembly 
+            for Electric Rickshaws, Solar Inverters, and other renewable energy applications. 
+            We deliver reliable, efficient, and eco-friendly energy solutions that empower sustainable growth.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1034/1034115.png" alt="EV Batteries">
+                <h3>EV Battery Packs</h3>
+                <p>Custom lithium-ion battery packs designed for E-rickshaws and small EVs.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Solar Battery">
+                <h3>Solar Storage Solutions</h3>
+                <p>Reliable solar inverter battery systems to store clean and efficient energy.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2622/2622126.png" alt="Industrial Battery">
+                <h3>Industrial Applications</h3>
+                <p>Battery assembly for backup power, robotics, and industrial automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formStatus"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 GreenVolt Energy | All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
