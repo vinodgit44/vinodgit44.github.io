@@ -113,13 +113,48 @@
                         </div>
                     </div>
 
-                    <!-- Image/Visual Placeholder -->
-                    <div class="mt-12 lg:mt-0 lg:w-5/12">
-                        <img class="w-full rounded-2xl shadow-2xl transform hover:scale-[1.01] transition duration-500 ease-in-out" 
-                            src="https://placehold.co/600x400/059669/ffffff?text=High-Capacity+Battery+Pack" 
-                            alt="High-Capacity Battery Pack Assembly"
-                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/059669/ffffff?text=Battery+Solutions+Visual';"
-                        >
+                    <!-- Image Slider -->
+                    <div class="mt-12 lg:mt-0 lg:w-5/12 relative" id="hero-slider-wrapper">
+                        <div id="hero-slider" class="overflow-hidden rounded-2xl shadow-2xl">
+                            <div id="hero-track" class="flex w-full transition-transform duration-700 ease-in-out">
+                                <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-1.jpg" 
+                                     alt="High-Capacity Battery Pack">
+                                <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-2.jpg" 
+                                     alt="EV Battery Module">
+                                <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-3.jpg" 
+                                     alt="Solar Storage Pack">
+
+                                 <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-4.jpg" 
+                                     alt="Solar Storage Pack">
+                                 <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-5.jpg" 
+                                     alt="Solar Storage Pack">
+                                 <img class="w-full flex-shrink-0 select-none" 
+                                     src="resources/hero-6.jpg" 
+                                     alt="Solar Storage Pack">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <button id="hero-prev" type="button" aria-label="Previous slide"
+                                class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M15.78 4.22a.75.75 0 010 1.06L9.06 12l6.72 6.72a.75.75 0 11-1.06 1.06l-7.25-7.25a.75.75 0 010-1.06l7.25-7.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button id="hero-next" type="button" aria-label="Next slide"
+                                class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M8.22 19.78a.75.75 0 010-1.06L14.94 12 8.22 5.28a.75.75 0 111.06-1.06l7.25 7.25a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <!-- Dots -->
+                        <div id="hero-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2"></div>
                     </div>
                 </div>
             </div>
@@ -193,16 +228,7 @@
         <!-- 3. Our Edge (Quality and Innovation) -->
         <section id="quality" class="py-24 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-                    <!-- Image/Visual Placeholder -->
-                    <div class="order-2 lg:order-1">
-                        <img class="w-full h-auto rounded-2xl shadow-2xl" 
-                             src="https://placehold.co/600x400/1E40AF/ffffff?text=Quality+Control+Station" 
-                             alt="Battery Testing and Quality Control"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E40AF/ffffff?text=Quality+Control+Visual';"
-                        >
-                    </div>
-
+                <div class="lg:grid lg:grid-cols-1 lg:gap-12 lg:items-center">
                     <!-- Text Content -->
                     <div class="mt-12 lg:mt-0 order-1 lg:order-2">
                         <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">The Lithon Energy Difference</span>
@@ -373,6 +399,73 @@
     </footer>
 
     <script>
+        // Hero slider (vanilla JS)
+        (function(){
+            const track = document.getElementById('hero-track');
+            if (!track) return; // guard if section removed
+            const slides = Array.from(track.children);
+            const total = slides.length;
+            let index = 0;
+            const prevBtn = document.getElementById('hero-prev');
+            const nextBtn = document.getElementById('hero-next');
+            const dotsWrap = document.getElementById('hero-dots');
+            const wrapper = document.getElementById('hero-slider-wrapper');
+
+            // Create dots
+            const dots = slides.map((_, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-label', `Go to slide ${i+1}`);
+                b.className = 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white ring-0';
+                b.addEventListener('click', () => { index = i; update(); restart(); });
+                dotsWrap.appendChild(b);
+                return b;
+            });
+
+            function update(){
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((d, i) => {
+                    if (i === index) {
+                        d.classList.add('bg-white','ring-2','ring-white/60');
+                        d.classList.remove('bg-white/50','ring-0');
+                    } else {
+                        d.classList.remove('bg-white','ring-2','ring-white/60');
+                        d.classList.add('bg-white/50','ring-0');
+                    }
+                });
+            }
+
+            function next(){ index = (index + 1) % total; update(); }
+            function prev(){ index = (index - 1 + total) % total; update(); }
+
+            prevBtn && prevBtn.addEventListener('click', () => { prev(); restart(); });
+            nextBtn && nextBtn.addEventListener('click', () => { next(); restart(); });
+
+            // Auto-play
+            let timer = setInterval(next, 5000);
+            function restart(){
+                clearInterval(timer);
+                timer = setInterval(next, 5000);
+            }
+            // Pause on hover (desktop)
+            if (wrapper) {
+                wrapper.addEventListener('mouseenter', () => clearInterval(timer));
+                wrapper.addEventListener('mouseleave', restart);
+                // Pause briefly on touch
+                let touchTimeout;
+                wrapper.addEventListener('touchstart', () => {
+                    clearInterval(timer);
+                    clearTimeout(touchTimeout);
+                }, {passive: true});
+                wrapper.addEventListener('touchend', () => {
+                    touchTimeout = setTimeout(restart, 3000);
+                });
+            }
+
+            // Initial state
+            update();
+        })();
+
         // Get the current year for the footer copyright
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -408,6 +501,7 @@
     </script>
 </body>
 </html>
+
 
 
 
