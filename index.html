@@ -1,481 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lithon Energy - EV & Solar Battery Solutions</title>
-   
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles and font setting */
-        :root {
-            --color-primary: #059669; /* Emerald 600 */
-            --color-secondary: #1E40AF; /* Blue 800 */
-            --color-light: #F3F4F6; /* Gray 100 */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-light);
-            color: #1F2937; /* Gray 800 */
-        }
-        /* In your style.css file or <style> block */
-        .header-logo {
-        width: 180px; /* Set desired width */
-        height: 180px; /* Ensure aspect ratio is maintained */
-        margin-right: 15px; /* Add some space to the right */
-        border-radius: 5px; /* Optional: adds a slight curve to corners */
-        }
-        .text-gradient {
-            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-        /* Style for the Call-to-Action button */
-        .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px -5px var(--color-primary);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px -5px var(--color-primary);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lithon Energy — Battery Assembly & Energy Storage</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- SEO basics -->
+  <meta name="description" content="Lithon Energy designs and manufactures lithium battery packs for EV mobility and solar energy storage. Smart BMS, high cycle life, and custom OEM solutions." />
+  <meta name="theme-color" content="#059669" />
+
+  <style>
+    :root {
+      --brand: #059669; /* Emerald */
+      --brand-dark: #047857;
+      --ink: #0f172a;   /* Slate-900 */
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .text-gradient {
+      background: linear-gradient(90deg, #059669 0%, #16a34a 40%, #22c55e 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+    }
+    /* Simple fade-in on scroll */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+  </style>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lithon Energy",
+    "url": "https://example.com",
+    "logo": "https://example.com/resources/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-8800712473",
+      "contactType": "customer service"
+    }]
+  }
+  </script>
 </head>
-<body class="antialiased">
 
-    <!-- Header & Navigation -->
-   <header class="sticky top-0 z-50 bg-white shadow-lg"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex justify-between items-center h-20"> <!-- Logo/Brand Name --> <a href="#" class="flex items-center space-x-2"> <img src="../resources/logof.png" alt="Lithon Energy" class="header-logo" /> <span class="sr-only">Lithon Energy</span> </a> <!-- Desktop Navigation --> <nav class="hidden md:flex space-x-8 font-medium"> <a href="#solutions" class="text-gray-600 hover:text-green-600 transition duration-150">Solutions</a> <a href="#quality" class="text-gray-600 hover:text-green-600 transition duration-150">Our Edge</a> <a href="#process" class="text-gray-600 hover:text-green-600 transition duration-150">Process</a> <a href="#contact" class="px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-150">Contact Us</a> </nav> <!-- Mobile Menu Button --> <button id="menu-button" class="md:hidden p-2 text-gray-700 hover:text-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path> </svg> </button> </div> </div> <!-- Mobile Menu (Hidden by default) --> <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center"> <a href="#solutions" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Solutions</a> <a href="#quality" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Our Edge</a> <a href="#process" class="text-gray-700 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Process</a> <a href="#contact" class="mt-2 w-11/12 text-center px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition duration-150">Contact Us</a> </div> </div> </header>
-
-    <main>
-<!-- 1. Hero Section -->
-        <!-- HERO TEXT SECTION -->
-<section class="relative pt-24 pb-20 bg-gray-50" id="hero-text">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:w-2/3">
-      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
-        <span class="block">Powering the</span>
-        <span class="block text-gradient">Sustainable Future.</span>
-      </h1>
-
-      <p class="mt-6 text-xl text-gray-600 max-w-lg">
-        LithonEnergy designs and manufactures high-performance lithium battery systems for EVs and clean energy storage. Customizable, reliable, efficient, and Made in India.
-      </p>
-
-      <div class="mt-10 flex space-x-4">
-        <a href="#solutions" class="cta-button inline-flex items-center justify-center px-8 py-3 text-white bg-green-600 rounded-xl">
-          Explore Solutions
+<body class="bg-gray-50 text-slate-800 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="resources/logo.png" alt="Lithon Energy" class="h-10 w-10 rounded-md object-contain" />
+          <span class="font-extrabold tracking-tight text-lg">Lithon<span class="text-green-600">Energy</span></span>
         </a>
-        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-green-600 text-green-600 rounded-xl hover:bg-green-50">
-          Get a Quote
-        </a>
+
+        <!-- Desktop nav (horizontal; startup style) -->
+        <nav class="hidden md:flex items-center gap-8 font-medium">
+          <a href="#solutions" class="text-slate-600 hover:text-green-600">Solutions</a>
+          <a href="#products" class="text-slate-600 hover:text-green-600">Products</a>
+          <a href="#quality" class="text-slate-600 hover:text-green-600">Why Us</a>
+          <a href="#process" class="text-slate-600 hover:text-green-600">Process</a>
+          <a href="#gallery" class="text-slate-600 hover:text-green-600">Gallery</a>
+          <a href="#faq" class="text-slate-600 hover:text-green-600">FAQ</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700">Contact</a>
+        </nav>
+
+        <!-- Mobile button -->
+        <button id="menu-button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 text-slate-700">☰</button>
       </div>
     </div>
-  </div>
-</section>
-<!-- HERO IMAGE SLIDER SECTION -->
-<section class="bg-white py-10" id="hero-slider-section">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="relative rounded-2xl overflow-hidden shadow-2xl" id="hero-slider-wrapper">
 
-      <div id="hero-slider" class="overflow-hidden">
-        <div id="hero-track" class="flex w-full transition-transform duration-700 ease-in-out">
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <nav class="max-w-7xl mx-auto px-4 py-3 grid gap-2 text-base">
+        <a href="#solutions" class="py-2">Solutions</a>
+        <a href="#products" class="py-2">Products</a>
+        <a href="#quality" class="py-2">Why Us</a>
+        <a href="#process" class="py-2">Process</a>
+        <a href="#gallery" class="py-2">Gallery</a>
+        <a href="#faq" class="py-2">FAQ</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-          <img src="../resources/hero-1.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
-          <img src="../resources/hero-2.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
-          <img src="../resources/hero-3.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
-          <img src="../resources/hero-4.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
-          <img src="../resources/hero-5.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
-          <img src="../resources/hero-6.JPG"  class="w-full h-80 object-cover flex-shrink-0" />
+  <!-- HERO (image hero; replace resources/hero.jpg later) -->
+  <section id="hero" class="relative w-full min-h-[70vh] grid place-items-center text-center">
+    <img src="resources/hero.jpg" alt="Battery assembly and energy storage" class="absolute inset-0 w-full h-full object-cover brightness-[0.55]" />
+    <div class="relative z-10 px-6 max-w-4xl">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white">Powering a <span class="text-gradient">Sustainable Future</span></h1>
+      <p class="mt-4 text-lg md:text-xl text-white/90">Lithon Energy builds high‑performance lithium battery packs for EV mobility and solar energy storage—designed, assembled, and tested with a startup's speed and an OEM's rigor.</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="#products" class="px-6 py-3 rounded-xl bg-green-600 text-white hover:bg-green-700">View Products</a>
+        <a href="#contact" class="px-6 py-3 rounded-xl border border-white/70 text-white hover:bg-white hover:text-green-700 transition">Get a Quote</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- Solutions (EV + Solar) -->
+  <section id="solutions" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Our Energy Solutions</h2>
+        <p class="mt-3 text-lg text-slate-600">Reliable power for mobility, homes, and industry—engineered for safety and lifecycle value.</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <!-- EV -->
+        <div class="p-8 bg-gray-50 rounded-2xl shadow-sm reveal">
+          <h3 class="text-2xl font-bold text-green-700">EV Mobility Batteries</h3>
+          <p class="mt-3 text-slate-700">24V / 36V / 48V / 60V / 72V systems for E‑Rickshaw, E‑Bike/Scooter, Golf Carts & AGVs. Smart BMS, robust assembly, and quick‑swap options.</p>
+          <ul class="mt-4 text-slate-600 space-y-1">
+            <li>• High discharge rates for urban duty cycles</li>
+            <li>• Fast charge compatibility</li>
+            <li>• Configurable enclosures and connectors</li>
+          </ul>
+        </div>
+        <!-- Solar -->
+        <div class="p-8 bg-gray-50 rounded-2xl shadow-sm reveal">
+          <h3 class="text-2xl font-bold text-green-700">Solar & Backup ESS</h3>
+          <p class="mt-3 text-slate-700">Lithium replacements for lead‑acid in 12V / 24V / 48V systems. Hybrid‑inverter friendly with advanced protections and long cycle life.</p>
+          <ul class="mt-4 text-slate-600 space-y-1">
+            <li>• Home & SME backup solutions</li>
+            <li>• Modular rack and wall‑mount designs</li>
+            <li>• Enhanced round‑trip efficiency</li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
+  <!-- Products with spec tables (assume Mixed chemistry & formats) -->
+  <section id="products" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Products & Specifications</h2>
+        <p class="mt-3 text-lg text-slate-600">Starter SKUs shown below. Custom voltages, capacities, and form‑factors available on request.</p>
       </div>
 
-      <!-- Controls -->
-      <button id="hero-prev" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow">‹</button>
-      <button id="hero-next" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow">›</button>
-      <div id="hero-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2"></div>
-    </div>
-  </div>
-</section>
-
-
-                  
-
-        <!-- 2. Solutions Section -->
-        <section id="solutions" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">Our Energy Solutions</h2>
-                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                        Reliable power for every application, built with precision and safety in mind.
-                    </p>
-                </div>
-
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-                    
-                    <!-- Solution 1: EV Rickshaw Battery Packs -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
-                        <div class="flex items-center space-x-4">
-                            <!-- EV Icon (Inline SVG) -->
-                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-3a2 2 0 01-2-2v-2h-2v2a2 2 0 01-2 2H7M5 10v7h14v-7M5 10a4 4 0 01-4-4v-1h16v1a4 4 0 01-4 4H5zM20 10v7M10 2a2 2 0 00-2 2v2M16 2a2 2 0 012 2v2"></path>
-                            </svg>
-                            <h3 class="text-2xl font-bold text-gray-900">EV Mobility</h3>
-                        </div>
-                        <p class="mt-4 text-gray-600">
-                              E-Bike Battery Packs: 24 V / 36 V / 48 V systems optimized for range, weight and integration.
-  E-Rickshaw / Three-Wheeler Packs: 48 V / 60 V / 72 V systems built for high discharge and long duty cycles.
-  Built with NMC or LFP chemistry, with smart BMS, high-quality cylindrical or prismatic cells.
-
-                        </p>
-                    </div>
-
-                    <!-- Solution 2: Solar Inverter Battery Packs -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
-                        <div class="flex items-center space-x-4">
-                            <!-- Solar Icon (Inline SVG) -->
-                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            <h3 class="text-2xl font-bold text-gray-900">Solar & Inverter Energy Storage</h3>
-                        </div>
-                        <p class="mt-4 text-gray-600">
-                              Home Inverter Battery Packs: 12 V / 24 V / 48 V systems for reliable home backup power.
-  Solar Battery Packs & Energy Storage Systems: Modular lithium-ion packs integrating with solar systems for extended cycle life.
-
-                        </p>
-                    </div>
-
-                    <!-- Solution 3: Custom Industrial Packs -->
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-green-600">
-                        <div class="flex items-center space-x-4">
-                            <!-- Custom Icon (Inline SVG) -->
-                            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <h3 class="text-2xl font-bold text-gray-900">Custom Power Solutions</h3>
-                        </div>
-                        <p class="mt-4 text-gray-600">
-                            We deliver fully custom battery solutions: from 12 V up to 75 V systems, tailored chemistry, and integrated BMS design.Higher energy density: more power,Thousands of cycle, Faster charging, higher efficiency, and lower maintenance.
-
-  
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Our Edge (Quality and Innovation) -->
-        <section id="quality" class="py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-1 lg:gap-12 lg:items-center">
-                    <!-- Text Content -->
-                    <div class="mt-12 lg:mt-0 order-1 lg:order-2">
-                        <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">The Lithon Energy Difference</span>
-                        <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Uncompromising Quality & Innovation</h2>
-                        <p class="mt-4 text-lg text-gray-600">
-                            We use only the highest-grade cells, including **18650 and 21700** formats, and advanced Battery Management Systems (BMS) to ensure every pack delivers superior performance, maximum safety, and an extended lifespan.
-                        </p>
-                        
-                        <div class="mt-8 space-y-6">
-                            <div class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.364A9 9 0 0121 12c0 2.21-1.002 4.207-2.585 5.485L17 21l-3.328-1.55a9.001 9.001 0 01-1.672.483c-2.484 0-4.755-.83-6.6-2.224"></path>
-                                </svg>
-                                <p class="ml-4 text-gray-700">
-                                    <span class="font-semibold text-gray-900">Advanced BMS:</span> Integrated smart management for optimal cell balancing and protection against overcharge/discharge.
-                                </p>
-                            </div>
-                            <div class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                                <p class="ml-4 text-gray-700">
-                                    <span class="font-semibold text-gray-900">Superior Efficiency:</span> Minimal energy loss, maximizing the range for EVs and backup time for inverters.
-                                </p>
-                            </div>
-                            <div class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 text-blue-800 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m0 0l8-4m-4 8h.01M4 15h.01M20 15h.01M4 19h.01M20 19h.01M12 18V9"></path>
-                                </svg>
-                                <p class="ml-4 text-gray-700">
-                                    <span class="font-semibold text-gray-900">Robust Assembly:</span> Industrial-grade assembly techniques ensure durability and performance in demanding environments.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 4. Assembly Process Section -->
-        <section id="process" class="py-24 bg-white">
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">Our Methodology</span>
-                    <h2 class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">The Precision Assembly Process</h2>
-                </div>
-
-                <div class="relative">
-                    <!-- Line connector for large screens -->
-                    <div class="hidden lg:block absolute inset-0 w-full h-1/2 mt-16 border-t-2 border-dashed border-green-300"></div>
-
-                    <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-                        <!-- Step 1 -->
-                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
-                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">1</div>
-                            <h3 class="text-xl font-bold text-gray-900">Cell Selection & Testing</h3>
-                            <p class="mt-2 text-gray-600">  Advanced Lithium-Ion & LFP batteries with high energy density and long life.Custom solutions from 12V to 72V+.   </p>                    
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
-                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">2</div>
-                            <h3 class="text-xl font-bold text-gray-900">BMS Integration</h3>
-                            <p class="mt-2 text-gray-600">Precision soldering and wiring of the Battery Management System for smart performance control.</p>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
-                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">3</div>
-                            <h3 class="text-xl font-bold text-gray-900">Housing & Enclosure</h3>
-                            <p class="mt-2 text-gray-600">Sealing the pack in a durable, vibration-resistant, and thermally managed enclosure.</p>
-                        </div>
-                        
-                        <!-- Step 4 -->
-                        <div class="relative flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-lg border-b-4 border-green-600 lg:col-span-1">
-                            <div class="w-12 h-12 flex items-center justify-center bg-green-600 rounded-full text-white text-xl font-bold mb-4 shadow-md">4</div>
-                            <h3 class="text-xl font-bold text-gray-900">Final Validation</h3>
-                            <p class="mt-2 text-gray-600">Full charge/discharge cycle testing and quality assurance checks before dispatch.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Call to Action Banner -->
-        <section class="bg-blue-800 py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold text-white">Ready to Power Your Innovation?</h2>
-                <p class="mt-4 text-xl text-blue-200">
-                    Let's discuss your custom battery pack requirements.
-                </p>
-                <a href="#contact" class="mt-8 cta-button inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-xl text-blue-800 bg-white hover:bg-gray-100 transition duration-300">
-                    Contact Our Experts Today
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer & Contact Section -->
-    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-700 pb-10">
-                <!-- Column 1: Brand Info -->
-                <div class="md:col-span-1">
-                    <span class="text-2xl font-extrabold text-white">Lithon<span class="text-green-500">Energy.</span></span>
-                    <p class="mt-4 text-gray-400 text-sm">
-                        Building the energy solutions that drive clean mobility and renewable energy adoption.
-                    </p>
-                </div>
-
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold text-green-500 mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#solutions" class="hover:text-green-500 transition duration-150">EV Solutions</a></li>
-                        <li><a href="#solutions" class="hover:text-green-500 transition duration-150">Solar Storage</a></li>
-                        <li><a href="#quality" class="hover:text-green-500 transition duration-150">Our Technology</a></li>
-                        <li><a href="#" class="hover:text-green-500 transition duration-150">Careers</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Contact Info -->
-                <div>
-                    <h4 class="text-lg font-semibold text-green-500 mb-4">Contact Info</h4>
-                    
-                    <!-- Dedicated WhatsApp Contact -->
-                    <p class="text-gray-400">
-                        <!-- Icon for chat/message -->
-                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14h2v-8h-2v8zM12 7.5a.5.5 0 110-1 .5.5 0 010 1z"/></svg>
-                        <a href="https://wa.me/919555280548" target="_blank" class="hover:text-green-500 transition duration-150">WhatsApp: +91 8800712473</a>
-                    </p>
-
-                    <!-- Standard Phone Contact -->
-                    <p class="mt-2 text-gray-400">
-                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.75-.25 1.02l-2.2 2.2z"/></svg>
-                        Phone:+91-8800712473
-                    </p>
-                    <p class="mt-2 text-gray-400">
-                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        info.lithonenergy@gmail.com
-                    </p>
-                    <p class="mt-2 text-gray-400">
-                        <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        Delhi, Mayapuri Phase-2, Industrial Area
-                    </p>
-                </div>
-
-                <!-- Column 4: Social Links (Mockup) -->
-                <div>
-                    <h4 class="text-lg font-semibold text-green-500 mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-green-500 transition duration-150">Facebook</a>
-                         <a href="#" class="text-gray-400 hover:text-green-500 transition duration-150">Instagram</a>
-                        
-                       
-                      
-                        
-                    </div>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="mt-8 text-center text-sm text-gray-500">
-                &copy; <span id="current-year"></span> Lithon Energy. All rights reserved.
-            </div>
+      <!-- EV Table -->
+      <div class="mt-10 reveal">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">EV Mobility Packs</h3>
+        <div class="overflow-x-auto bg-white rounded-xl shadow">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 text-slate-700">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">Voltage</th>
+                <th class="px-4 py-3">Capacity</th>
+                <th class="px-4 py-3">Cell Type</th>
+                <th class="px-4 py-3">Chemistry</th>
+                <th class="px-4 py-3">Discharge</th>
+                <th class="px-4 py-3">Cycle Life*</th>
+                <th class="px-4 py-3">BMS</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑EV‑48‑30</td>
+                <td class="px-4 py-3">48 V</td>
+                <td class="px-4 py-3">30 Ah</td>
+                <td class="px-4 py-3">18650 / 21700</td>
+                <td class="px-4 py-3">NMC or LFP</td>
+                <td class="px-4 py-3">Up to 2C</td>
+                <td class="px-4 py-3">1000–3000</td>
+                <td class="px-4 py-3">Smart, CAN/UART</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑EV‑60‑40</td>
+                <td class="px-4 py-3">60 V</td>
+                <td class="px-4 py-3">40 Ah</td>
+                <td class="px-4 py-3">21700 / Prismatic</td>
+                <td class="px-4 py-3">LFP</td>
+                <td class="px-4 py-3">Up to 2.5C</td>
+                <td class="px-4 py-3">2000–4000</td>
+                <td class="px-4 py-3">Smart, BLE option</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑EV‑72‑50</td>
+                <td class="px-4 py-3">72 V</td>
+                <td class="px-4 py-3">50 Ah</td>
+                <td class="px-4 py-3">Prismatic LFP</td>
+                <td class="px-4 py-3">LFP</td>
+                <td class="px-4 py-3">Up to 3C</td>
+                <td class="px-4 py-3">3000–6000</td>
+                <td class="px-4 py-3">Smart, CAN</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </footer>
+        <p class="text-xs text-slate-500 mt-2">*Cycle life depends on chemistry, depth of discharge, and operating conditions.</p>
+      </div>
 
-    <script>
-        // Hero slider (vanilla JS)
-        (function(){
-            const track = document.getElementById('hero-track');
-            if (!track) return; // guard if section removed
-            const slides = Array.from(track.children);
-            const total = slides.length;
-            let index = 0;
-            const prevBtn = document.getElementById('hero-prev');
-            const nextBtn = document.getElementById('hero-next');
-            const dotsWrap = document.getElementById('hero-dots');
-            const wrapper = document.getElementById('hero-slider-wrapper');
+      <!-- Solar/ESS Table -->
+      <div class="mt-12 reveal">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">Solar / Inverter Energy Storage</h3>
+        <div class="overflow-x-auto bg-white rounded-xl shadow">
+          <table class="min-w-full text-left text-sm">
+            <thead class="bg-gray-100 text-slate-700">
+              <tr>
+                <th class="px-4 py-3">Model</th>
+                <th class="px-4 py-3">System</th>
+                <th class="px-4 py-3">Capacity</th>
+                <th class="px-4 py-3">Chemistry</th>
+                <th class="px-4 py-3">Max Charge</th>
+                <th class="px-4 py-3">Interface</th>
+                <th class="px-4 py-3">Form Factor</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑ESS‑12‑100</td>
+                <td class="px-4 py-3">12 V</td>
+                <td class="px-4 py-3">100 Ah</td>
+                <td class="px-4 py-3">LFP</td>
+                <td class="px-4 py-3">1C</td>
+                <td class="px-4 py-3">UART</td>
+                <td class="px-4 py-3">Drop‑in</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑ESS‑24‑150</td>
+                <td class="px-4 py-3">24 V</td>
+                <td class="px-4 py-3">150 Ah</td>
+                <td class="px-4 py-3">LFP</td>
+                <td class="px-4 py-3">0.8C</td>
+                <td class="px-4 py-3">CAN</td>
+                <td class="px-4 py-3">Rack</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">LE‑ESS‑48‑200</td>
+                <td class="px-4 py-3">48 V</td>
+                <td class="px-4 py-3">200 Ah</td>
+                <td class="px-4 py-3">LFP</td>
+                <td class="px-4 py-3">0.5C</td>
+                <td class="px-4 py-3">CAN</td>
+                <td class="px-4 py-3">Wall‑mount</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-            // Create dots
-            const dots = slides.map((_, i) => {
-                const b = document.createElement('button');
-                b.type = 'button';
-                b.setAttribute('aria-label', `Go to slide ${i+1}`);
-                b.className = 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white ring-0';
-                b.addEventListener('click', () => { index = i; update(); restart(); });
-                dotsWrap.appendChild(b);
-                return b;
-            });
+      <div class="mt-8 flex flex-wrap gap-3 reveal">
+        <a href="#contact" class="px-5 py-3 rounded-lg bg-green-600 text-white hover:bg-green-700">Request Custom Specs</a>
+        <a href="#faq" class="px-5 py-3 rounded-lg border border-slate-200 hover:bg-white">Read Safety & Warranty</a>
+      </div>
+    </div>
+  </section>
 
-            function update(){
-                track.style.transform = `translateX(-${index * 100}%)`;
-                dots.forEach((d, i) => {
-                    if (i === index) {
-                        d.classList.add('bg-white','ring-2','ring-white/60');
-                        d.classList.remove('bg-white/50','ring-0');
-                    } else {
-                        d.classList.remove('bg-white','ring-2','ring-white/60');
-                        d.classList.add('bg-white/50','ring-0');
-                    }
-                });
-            }
+  <!-- Why Us / Quality -->
+  <section id="quality" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div class="reveal">
+          <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">The Lithon Energy Difference</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold">Uncompromising Quality & Innovation</h2>
+          <p class="mt-4 text-slate-700">Mixed cell strategy (18650, 21700, Prismatic LFP) to match performance, cost, and longevity targets. Smart BMS with protections and telemetry for real‑world reliability.</p>
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>✔ Advanced BMS: balancing, short‑circuit, OVP/UVP, OTP</li>
+            <li>✔ Superior Efficiency: high round‑trip efficiency and low IR</li>
+            <li>✔ Robust Assembly: vibration, thermal, and environmental design</li>
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <img src="resources/quality-1.jpg" alt="Cell matching" class="rounded-xl shadow object-cover w-full h-44" />
+          <img src="resources/quality-2.jpg" alt="BMS integration" class="rounded-xl shadow object-cover w-full h-44" />
+          <img src="resources/quality-3.jpg" alt="Enclosure build" class="rounded-xl shadow object-cover w-full h-44" />
+          <img src="resources/quality-4.jpg" alt="Validation tests" class="rounded-xl shadow object-cover w-full h-44" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function next(){ index = (index + 1) % total; update(); }
-            function prev(){ index = (index - 1 + total) % total; update(); }
+  <!-- Process -->
+  <section id="process" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">Our Methodology</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold">Precision Assembly Process</h2>
+      </div>
 
-            prevBtn && prevBtn.addEventListener('click', () => { prev(); restart(); });
-            nextBtn && nextBtn.addEventListener('click', () => { next(); restart(); });
+      <div class="mt-12 grid md:grid-cols-4 gap-6">
+        <div class="p-6 bg-white rounded-xl border-b-4 border-green-600 shadow-sm text-center reveal">
+          <div class="w-10 h-10 grid place-items-center bg-green-600 text-white rounded-full mx-auto mb-3 font-bold">1</div>
+          <h3 class="font-bold">Cell Selection & Testing</h3>
+          <p class="mt-2 text-slate-600">Cell matching, IR measurement, and capacity bins to form balanced packs.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border-b-4 border-green-600 shadow-sm text-center reveal">
+          <div class="w-10 h-10 grid place-items-center bg-green-600 text-white rounded-full mx-auto mb-3 font-bold">2</div>
+          <h3 class="font-bold">BMS Integration</h3>
+          <p class="mt-2 text-slate-600">Precision spot‑welding and harnessing with smart BMS & comms interfaces.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border-b-4 border-green-600 shadow-sm text-center reveal">
+          <div class="w-10 h-10 grid place-items-center bg-green-600 text-white rounded-full mx-auto mb-3 font-bold">3</div>
+          <h3 class="font-bold">Enclosure & Thermal</h3>
+          <p class="mt-2 text-slate-600">Vibration‑resistant assembly with thermal pads, potting (when required).</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl border-b-4 border-green-600 shadow-sm text-center reveal">
+          <div class="w-10 h-10 grid place-items-center bg-green-600 text-white rounded-full mx-auto mb-3 font-bold">4</div>
+          <h3 class="font-bold">Validation & QA</h3>
+          <p class="mt-2 text-slate-600">Charge/discharge cycling, safety checks, and documentation before dispatch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Auto-play
-            let timer = setInterval(next, 5000);
-            function restart(){
-                clearInterval(timer);
-                timer = setInterval(next, 5000);
-            }
-            // Pause on hover (desktop)
-            if (wrapper) {
-                wrapper.addEventListener('mouseenter', () => clearInterval(timer));
-                wrapper.addEventListener('mouseleave', restart);
-                // Pause briefly on touch
-                let touchTimeout;
-                wrapper.addEventListener('touchstart', () => {
-                    clearInterval(timer);
-                    clearTimeout(touchTimeout);
-                }, {passive: true});
-                wrapper.addEventListener('touchend', () => {
-                    touchTimeout = setTimeout(restart, 3000);
-                });
-            }
+  <!-- Gallery (replace images after upload) -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Workshop & Products Gallery</h2>
+        <p class="mt-3 text-lg text-slate-600">Upload your real photos and replace the placeholders below.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <img src="resources/gallery-1.jpg" alt="EV pack" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+        <img src="resources/gallery-2.jpg" alt="Solar pack" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+        <img src="resources/gallery-3.jpg" alt="Assembly bench" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+        <img src="resources/gallery-4.jpg" alt="Spot welding" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+        <img src="resources/gallery-5.jpg" alt="BMS wiring" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+        <img src="resources/gallery-6.jpg" alt="Field installation" class="w-full h-56 object-cover rounded-xl shadow reveal" />
+      </div>
+    </div>
+  </section>
 
-            // Initial state
-            update();
-        })();
+  <!-- Certifications / Compliance -->
+  <section id="certs" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Safety, Certifications & Compliance</h2>
+        <p class="mt-3 text-lg text-slate-600">We design for safety and regulatory alignment across applications.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold text-green-700">Standards We Align To</h4>
+          <ul class="mt-3 text-slate-700 list-disc list-inside">
+            <li>UN 38.3 Transport</li>
+            <li>IEC 62133 / BIS (where applicable)</li>
+            <li>ISO 9001 manufacturing practices</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold text-green-700">Test Coverage</h4>
+          <ul class="mt-3 text-slate-700 list-disc list-inside">
+            <li>Cycle & capacity tests</li>
+            <li>Short‑circuit & protection trigger</li>
+            <li>Thermal & vibration checks</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold text-green-700">Documentation</h4>
+          <ul class="mt-3 text-slate-700 list-disc list-inside">
+            <li>Datasheets & user manuals</li>
+            <li>MSDS & safety guidelines</li>
+            <li>Warranty terms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Get the current year for the footer copyright
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">What Clients Say</h2>
+        <p class="mt-3 text-lg text-slate-600">Early adopters and OEM partners on our quality and service.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm reveal">
+          <p class="text-slate-700">“Reliable packs with clear documentation and fast support.”</p>
+          <div class="mt-3 text-sm text-slate-500">— Fleet Operator, Delhi</div>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm reveal">
+          <p class="text-slate-700">“Custom form‑factor delivered for our scooter platform in weeks.”</p>
+          <div class="mt-3 text-sm text-slate-500">— EV OEM, NCR</div>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-xl shadow-sm reveal">
+          <p class="text-slate-700">“Excellent ESS performance with hybrid inverters.”</p>
+          <div class="mt-3 text-sm text-slate-500">— Solar EPC, Jaipur</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // JavaScript for mobile menu toggle
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">FAQ</h2>
+        <p class="mt-3 text-lg text-slate-600">Charging, safety, warranty, and customization.</p>
+      </div>
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold">Which chemistry should I choose?</h4>
+          <p class="mt-2 text-slate-700">LFP for longevity and safety; NMC for higher energy density. We also support mixed approaches depending on duty cycle and cost targets.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold">Do you provide custom enclosures?</h4>
+          <p class="mt-2 text-slate-700">Yes—wall‑mount, rack, and vehicle‑specific enclosures with custom connectors and harnesses.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold">What warranties are available?</h4>
+          <p class="mt-2 text-slate-700">Typical 12–36 months depending on application and usage profile. Extended options on request.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow reveal">
+          <h4 class="font-semibold">Can you integrate with my inverter?</h4>
+          <p class="mt-2 text-slate-700">We support common hybrid inverters and can advise on communication settings for optimal performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Optional: Hide mobile menu after clicking a link
-        const navLinks = mobileMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Wait for the smooth scroll to start, then hide
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300); 
-            });
-        });
+  <!-- CTA Banner -->
+  <section class="bg-green-700 py-16 text-center text-white">
+    <div class="max-w-5xl mx-auto px-6 reveal">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Ready to Power Your Innovation?</h2>
+      <p class="mt-4 text-lg text-white/90">Send your voltage, capacity, and duty cycle — we’ll map the ideal pack and BMS.</p>
+      <a href="#contact" class="mt-6 inline-block px-8 py-4 rounded-xl bg-white text-green-700 font-semibold hover:bg-gray-100">Contact Our Team</a>
+    </div>
+  </section>
 
-        // Smooth scrolling for anchor links (better user experience)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+  <!-- Contact & Footer -->
+  <footer id="contact" class="bg-slate-950 text-white pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 border-b border-white/10 pb-10">
+        <div>
+          <div class="text-2xl font-extrabold">Lithon<span class="text-green-500">Energy</span></div>
+          <p class="mt-3 text-sm text-white/70">Building the energy solutions that drive clean mobility and renewable adoption.</p>
+        </div>
+        <div>
+          <h4 class="text-green-400 font-semibold mb-3">Quick Links</h4>
+          <nav class="grid gap-2 text-white/80 text-sm">
+            <a href="#solutions" class="hover:text-green-400">EV Solutions</a>
+            <a href="#products" class="hover:text-green-400">Product Specs</a>
+            <a href="#quality" class="hover:text-green-400">Quality</a>
+            <a href="#gallery" class="hover:text-green-400">Gallery</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="text-green-400 font-semibold mb-3">Contact</h4>
+          <div class="space-y-2 text-white/80 text-sm">
+            <a href="https://wa.me/919555280548" target="_blank" class="hover:text-green-400">WhatsApp: +91 9555280548</a>
+            <div>Phone: +91-8800712473</div>
+            <div>Email: info.lithonenergy@gmail.com</div>
+            <div>Delhi, Mayapuri Phase‑2, Industrial Area</div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-green-400 font-semibold mb-3">Get a Quote</h4>
+          <form class="grid gap-3 text-slate-900" onsubmit="event.preventDefault(); window.location.href='#';">
+            <input type="text" placeholder="Name" class="px-3 py-2 rounded bg-white/90" required />
+            <input type="email" placeholder="Email" class="px-3 py-2 rounded bg-white/90" required />
+            <textarea placeholder="Requirement (voltage, Ah, use‑case)" rows="3" class="px-3 py-2 rounded bg-white/90" required></textarea>
+            <button class="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm text-white/60">© <span id="year"></span> Lithon Energy. All rights reserved.</div>
+    </div>
+  </footer>
 
-    </script>
+  <!-- Scripts -->
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn && menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
