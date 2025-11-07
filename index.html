@@ -28,6 +28,12 @@
     /* Simple fade-in on scroll */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
+    .header-logo {
+        width: 180px; /* Set desired width */
+        height: 180px; /* Ensure aspect ratio is maintained */
+        margin-right: 15px; /* Add some space to the right */
+        border-radius: 5px; /* Optional: adds a slight curve to corners */
+        }
   </style>
 
   <!-- Schema.org Organization -->
@@ -56,10 +62,10 @@
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-16 flex items-center justify-between">
-        <a href="#hero" class="flex items-center gap-3">
-          <img src="../resources/logof.png" alt="Lithon Energy" class="h-20 w-20 rounded-md object-contain" />
-        
-        </a>
+        <a href="#" class="flex items-center space-x-2">
+                    <img src="../resources/logof.png" alt="Lithon Energy" class="header-logo" />
+                    <span class="sr-only">Lithon Energy</span>
+                </a>
 
         <!-- Desktop nav (horizontal; startup style) -->
         <nav class="hidden md:flex items-center gap-8 font-medium">
@@ -499,6 +505,7 @@
   </script>
 </body>
 </html>
+
 
 
 
