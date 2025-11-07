@@ -87,72 +87,58 @@
     </header>
 
     <main>
-        <!-- 1. Hero Section -->
-        <section class="relative pt-24 pb-32 overflow-hidden bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:flex lg:items-center lg:justify-between">
-                    <!-- Text Content -->
-                    <div class="lg:w-1/2">
-                        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
-                            <span class="block">Powering the</span>
-                            <span class="block text-gradient">Sustainable Future.</span>
-                        </h1>
-                        <p class="mt-6 text-xl text-gray-600 max-w-lg">
-                            LithonEnergy designs and manufactures high-performance lithium battery systems for EVs and energy storage. Made in India, our batteries combine safety, durability, and cutting-edge technology. Custom solutions available, powering sustainable mobility and clean energy.
+<!-- 1. Hero Section -->
+        <!-- HERO TEXT SECTION -->
+<section class="relative pt-24 pb-20 bg-gray-50" id="hero-text">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:w-2/3">
+      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
+        <span class="block">Powering the</span>
+        <span class="block text-gradient">Sustainable Future.</span>
+      </h1>
 
-                        </p>
-                        <div class="mt-10 flex space-x-4">
-                            <a href="#solutions" class="cta-button inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-green-600 hover:bg-green-700">
-                                Explore Our Solutions
-                            </a>
-                            <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-green-600 text-base font-medium rounded-xl text-green-600 bg-white hover:bg-green-50">
-                                Get a Quote
-                            </a>
-                        </div>
-                    </div>
+      <p class="mt-6 text-xl text-gray-600 max-w-lg">
+        LithonEnergy designs and manufactures high-performance lithium battery systems for EVs and clean energy storage. Customizable, reliable, efficient, and Made in India.
+      </p>
 
-                    <!-- Image Slider -->
-                    <div class="mt-12 lg:mt-0 lg:w-5/12 relative" id="hero-slider-wrapper">
-                        <div id="hero-slider" class="overflow-hidden rounded-2xl shadow-2xl">
-                            <div id="hero-track" class="flex w-full transition-transform duration-700 ease-in-out">
-                               <img src="../resources/hero-1.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
-                                  <img src="../resources/hero-2.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
-                                  <img src="../resources/hero-3.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
+      <div class="mt-10 flex space-x-4">
+        <a href="#solutions" class="cta-button inline-flex items-center justify-center px-8 py-3 text-white bg-green-600 rounded-xl">
+          Explore Solutions
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-green-600 text-green-600 rounded-xl hover:bg-green-50">
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- HERO IMAGE SLIDER SECTION -->
+<section class="bg-white py-10" id="hero-slider-section">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="relative rounded-2xl overflow-hidden shadow-2xl" id="hero-slider-wrapper">
+      <div id="hero-slider" class="overflow-hidden">
+        <div id="hero-track" class="flex w-full transition-transform duration-700 ease-in-out">
 
-                                  <img src="../resources/hero-4.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
-                                  <img src="../resources/hero-5.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
-                                 <img src="../resources/hero-6.JPG" 
-                                     alt="Solar Storage Pack" class="w-full flex-shrink-0 select-none" />
-                                     
-                                
-                            </div>
-                        </div>
+          <img src="../resources/hero-1.JPG" class="w-full flex-shrink-0" />
+          <img src="../resources/hero-2.JPG" class="w-full flex-shrink-0" />
+          <img src="../resources/hero-3.JPG" class="w-full flex-shrink-0" />
+          <img src="../resources/hero-4.JPG" class="w-full flex-shrink-0" />
+          <img src="../resources/hero-5.JPG" class="w-full flex-shrink-0" />
+          <img src="../resources/hero-6.JPG" class="w-full flex-shrink-0" />
 
-                        <!-- Controls -->
-                        <button id="hero-prev" type="button" aria-label="Previous slide"
-                                class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                <path fill-rule="evenodd" d="M15.78 4.22a.75.75 0 010 1.06L9.06 12l6.72 6.72a.75.75 0 11-1.06 1.06l-7.25-7.25a.75.75 0 010-1.06l7.25-7.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <button id="hero-next" type="button" aria-label="Next slide"
-                                class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                <path fill-rule="evenodd" d="M8.22 19.78a.75.75 0 010-1.06L14.94 12 8.22 5.28a.75.75 0 111.06-1.06l7.25 7.25a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
+        </div>
+      </div>
 
-                        <!-- Dots -->
-                        <div id="hero-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Controls -->
+      <button id="hero-prev" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow">‹</button>
+      <button id="hero-next" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow">›</button>
+      <div id="hero-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2"></div>
+    </div>
+  </div>
+</section>
+
+
+                  
 
         <!-- 2. Solutions Section -->
         <section id="solutions" class="py-24 bg-white">
@@ -364,7 +350,7 @@
                     </p>
                     <p class="mt-2 text-gray-400">
                         <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        amitkumarec25@gmail.com
+                        info.lithonenergy@gmail.com
                     </p>
                     <p class="mt-2 text-gray-400">
                         <svg class="w-4 h-4 inline mr-2 align-middle" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -495,6 +481,7 @@
     </script>
 </body>
 </html>
+
 
 
 
